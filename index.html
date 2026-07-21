@@ -1,1 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engenharia Elétrica & Serviços Técnicos | Soluções Industriais e Residenciais</title>
+    <meta name="description" content="Soluções em engenharia elétrica, manutenção industrial, painéis de comando, motores de indução, emissão de ART, automação e instalações residenciais.">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #d97706;
+            --accent-hover: #b45309;
+            --secondary: #2563eb;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --text-light: #f8fafc;
+            --border: #e2e8f0;
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .btn-header {
+            background-color: var(--accent);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn-header:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--text-light);
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(217, 119, 6, 0.2);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 750px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: #22c55e;
+            color: #ffffff;
+            padding: 0.8rem 1.75rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #16a34a;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 1px solid #475569;
+            padding: 0.8rem 1.75rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        /* Trust Badges */
+        .trust-bar {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .trust-item strong {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        .trust-item span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-category {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .service-category h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px dashed var(--border);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .service-list li strong {
+            color: var(--text-dark);
+        }
+
+        .service-category .btn-cat {
+            display: block;
+            text-align: center;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 0.7rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .service-category .btn-cat:hover {
+            background-color: var(--primary-light);
+        }
+
+        /* About Section */
+        .about {
+            background-color: #ffffff;
+            padding: 4rem 5%;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        .highlight-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            padding: 1.2rem;
+            margin-top: 1.5rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .highlight-box strong {
+            color: var(--primary);
+        }
+
+        /* Workflow */
+        .workflow {
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .step-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+        }
+
+        .step-number {
+            background-color: var(--accent);
+            color: var(--text-light);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+            font-weight: 700;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--text-light);
+            padding: 3.5rem 5%;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020617;
+            color: #64748b;
+            padding: 2rem 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: #f8fafc;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #22c55e;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-decoration: none;
+            z-index: 2000;
+            font-size: 30px;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">⚡ <span>ENGENHARIA</span> & ELÉTRICA</a>
+        <nav>
+            <ul>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#industrial">Industrial</a></li>
+                <li><a href="#residencial">Residencial</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/+5519983953803?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn-header" target="_blank">Falar no WhatsApp</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-badge">⚡ Engenharia Elétrica & Manutenção Especializada</span>
+        <h1>Soluções elétricas com a agilidade do chão de fábrica e a segurança da Engenharia.</h1>
+        <p>Do diagnóstico preciso em painéis e motores industriais a projetos residenciais e automação. Atendimento técnico especializado com emissão de ART e conformidade com as normas NRs.</p>
+        <div class="hero-btns">
+            <a href="https://wa.me/19984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn-primary" target="_blank">
+                📱 Falar com o Engenheiro
+            </a>
+            <a href="#servicos" class="btn-secondary">Conheça Nossos Serviços</a>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-item">
+            <strong>🛡️ Responsável Técnico</strong>
+            <span>Engenheiro Eletricista Habilitado</span>
+        </div>
+        <div class="trust-item">
+            <strong>⚙️ Experiência Prática</strong>
+            <span>Vivência em Manutenção Industrial</span>
+        </div>
+        <div class="trust-item">
+            <strong>📄 Emissão de ART</strong>
+            <span>Laudos e Adequações Oficiais</span>
+        </div>
+        <div class="trust-item">
+            <strong>👷 Seguranças NRs</strong>
+            <span>Conformidade com NR-10 e NR-35</span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicos">
+        <div class="section-title">
+            <h2>Nossas Soluções Técnicas</h2>
+            <p>Atendimento especializado para indústrias, comércios e residências.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Industrial -->
+            <div class="service-category" id="industrial">
+                <h3>🏭 Setor Industrial & Comercial</h3>
+                <ul class="service-list">
+                    <li><strong>Painéis de Comando:</strong> Análise, montagem e detecção avançada de falhas elétricas.</li>
+                    <li><strong>Motores Elétricos:</strong> Manutenção preventiva e diagnósticos em motores de indução trifásicos.</li>
+                    <li><strong>Equipamentos Especiais:</strong> Manutenção e calibração de estufas e painéis laboratoriais.</li>
+                    <li><strong>Engenharia e ART:</strong> Laudos de instalações, adequações e Anotação de Responsabilidade Técnica.</li>
+                    <li><strong>Manutenção Preventiva:</strong> Planos focados na redução do tempo de parada de produção (downtime).</li>
+                </ul>
+                <a href="https://wa.me/+5519983953803?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7o%20industrial." class="btn-cat" target="_blank">Solicitar Orçamento Industrial</a>
+            </div>
+
+            <!-- Residencial -->
+            <div class="service-category" id="residencial">
+                <h3>🏠 Setor Residencial & Automação</h3>
+                <ul class="service-list">
+                    <li><strong>Instalações e Reformas:</strong> Execução de projetos elétricos com padrão e segurança de engenharia.</li>
+                    <li><strong>Automação Residencial:</strong> Projetos de iluminação inteligente, controle de acesso e conforto.</li>
+                    <li><strong>Ar-Condicionado:</strong> Instalação técnica, higienização e manutenção preventiva.</li>
+                    <li><strong>Diagnóstico de Urgência:</strong> Solução rápida para curtos-circuitos, quedas de disjuntor e fuga de corrente.</li>
+                    <li><strong>Quadros de Distribuição:</strong> Mapeamento, dimensionamento correto e substituição de componentes.</li>
+                </ul>
+                <a href="https://wa.me/+5519983953803?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7o%20residencial." class="btn-cat" target="_blank">Solicitar Orçamento Residencial</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="sobre">
+        <div class="about-container">
+            <h2>Engenharia Aplicada à Prática</h2>
+            <p>Diferente de consultorias puramente teóricas ou de execuções sem amparo técnico, nossa atuação une a experiência de chão de fábrica à responsabilidade técnica de um Engenheiro Eletricista.</p>
+            <p>Com bagagem prática como técnico eletricista e atuação direta na manutenção industrial, possuímos know-how em motores de indução trifásicos, diagnósticos em painéis de comando complexos e equipamentos laboratoriais de alta precisão.</p>
+            
+            <div class="highlight-box">
+                <strong>Garantia de Segurança e Qualidade:</strong> Cada serviço executado — seja uma grande intervenção industrial ou uma reforma residencial — segue rigorosamente as normas de segurança vigentes (ABNT / NRs) com total respaldo técnico.
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow -->
+    <section class="workflow">
+        <div class="section-title">
+            <h2>Como Funciona o Atendimento</h2>
+            <p>Processo simples, transparente e focado na solução.</p>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <strong>Contato Inicial</strong>
+                <p>Envie sua necessidade pelo WhatsApp ou formulário.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <strong>Diagnóstico / Visita</strong>
+                <p>Avaliamos tecnicamente a demanda ou agendamos visita local.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <strong>Proposta Comercial</strong>
+                <p>Apresentamos o orçamento claro com escopo e prazos.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <strong>Execução & Garantia</strong>
+                <p>Serviço concluído nas normas, com emissão de ART e garantia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <h2>Precisa de um diagnóstico preciso ou orçamento técnico?</h2>
+        <p>Evite riscos com instalações inadequadas ou paradas não planejadas na sua produção. Fale diretamente com o profissional responsável.</p>
+        <a href="https://wa.me/+5519983953803?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20t%C3%A9cnico." class="btn-primary" target="_blank">
+            💬 Iniciar Conversa no WhatsApp
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Engenharia Elétrica & Serviços Técnicos</strong></p>
+        <p>Projetos, Manutenção Industrial, Automação Residencial e Emissão de ART.</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; color: #475569;">© 2026 Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/+5519983953803?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>
 
