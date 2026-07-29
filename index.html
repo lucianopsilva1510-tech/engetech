@@ -32,6 +32,7 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
         }
 
         /* Header */
@@ -46,6 +47,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
 
         .logo {
@@ -88,6 +91,7 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: background 0.3s;
+            text-align: center;
         }
 
         .btn-header:hover {
@@ -114,6 +118,7 @@
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            max-width: 100%;
         }
 
         .hero h1 {
@@ -148,8 +153,10 @@
             font-weight: 700;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             transition: transform 0.2s, background 0.2s;
+            text-align: center;
         }
 
         .btn-primary:hover {
@@ -166,6 +173,10 @@
             text-decoration: none;
             font-weight: 600;
             transition: background 0.2s, border-color 0.2s;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-secondary:hover {
@@ -227,8 +238,8 @@
 
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -238,7 +249,7 @@
             border: 1px solid var(--border);
             border-left: 4px solid #ef4444;
             border-radius: var(--radius);
-            padding: 1.5rem;
+            padding: 1.25rem;
             display: flex;
             align-items: flex-start;
             gap: 12px;
@@ -246,12 +257,13 @@
 
         .problem-card span {
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
         .problem-card p {
             color: var(--primary);
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.98rem;
         }
 
         /* Mission Section */
@@ -290,8 +302,8 @@
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -299,7 +311,7 @@
         .step-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 1.8rem 1.2rem;
+            padding: 1.5rem 1rem;
             border-radius: var(--radius);
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.03);
@@ -315,7 +327,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.2rem auto;
+            margin: 0 auto 1rem auto;
             font-weight: 700;
             font-size: 1.1rem;
         }
@@ -335,8 +347,8 @@
 
         .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -345,7 +357,7 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 2rem;
+            padding: 1.75rem;
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
         }
@@ -356,7 +368,7 @@
         }
 
         .solution-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--primary);
             margin-bottom: 0.8rem;
             display: flex;
@@ -378,8 +390,8 @@
 
         .segments-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -388,7 +400,7 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 1.5rem;
+            padding: 1.25rem 1rem;
             text-align: center;
             font-weight: 600;
             color: var(--primary);
@@ -407,8 +419,8 @@
 
         .diff-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -418,7 +430,7 @@
             border: 1px solid var(--border);
             border-top: 4px solid var(--accent);
             border-radius: var(--radius);
-            padding: 1.8rem;
+            padding: 1.5rem;
         }
 
         .diff-card h3 {
@@ -460,7 +472,7 @@
         .highlight-box {
             background-color: #ffffff;
             border-left: 4px solid var(--accent);
-            padding: 1.5rem;
+            padding: 1.25rem;
             margin-top: 2rem;
             border-radius: 0 var(--radius) var(--radius) 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.03);
@@ -513,16 +525,16 @@
             right: 20px;
             background-color: #22c55e;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 58px;
+            height: 58px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
             text-decoration: none;
             z-index: 2000;
-            font-size: 30px;
+            font-size: 28px;
             transition: transform 0.3s;
         }
 
@@ -530,18 +542,141 @@
             transform: scale(1.1);
         }
 
+        /* OTIMIZAÇÕES MOBILE DEDICADAS (RESPONSIVIDADE) */
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
+            header {
+                padding: 0.85rem 4%;
+                justify-content: space-between;
             }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
+
+            .logo {
                 font-size: 1.05rem;
             }
+
+            nav ul {
+                display: none; /* Oculta menu extenso para economizar espaço no celular */
+            }
+
+            .btn-header {
+                padding: 0.45rem 0.8rem;
+                font-size: 0.82rem;
+            }
+
+            .hero {
+                padding: 3rem 4% 2.5rem;
+            }
+
+            .hero-badge {
+                font-size: 0.72rem;
+                padding: 0.3rem 0.65rem;
+                white-space: normal;
+                word-break: break-word;
+            }
+
+            .hero h1 {
+                font-size: 1.85rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1.8rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.75rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                padding: 0.85rem 1rem;
+                font-size: 0.95rem;
+            }
+
+            .trust-bar {
+                grid-template-columns: 1fr 1fr; /* 2 colunas organizadas no celular */
+                gap: 1.25rem 0.75rem;
+                padding: 1.5rem 4%;
+            }
+
+            .trust-item strong {
+                font-size: 0.9rem;
+            }
+
+            .trust-item span {
+                font-size: 0.78rem;
+            }
+
+            .section-title {
+                margin-bottom: 2rem;
+            }
+
             .section-title h2 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
+            }
+
+            .section-title p {
+                font-size: 0.95rem;
+            }
+
+            .problem-section, 
+            .workflow, 
+            .solutions, 
+            .segments, 
+            .differentials, 
+            .about, 
+            .cta-banner {
+                padding: 3rem 4%;
+            }
+
+            .problem-grid, 
+            .steps-grid, 
+            .solutions-grid, 
+            .segments-grid, 
+            .diff-grid {
+                grid-template-columns: 1fr; /* Coluna única fluida no celular */
+                gap: 1rem;
+            }
+
+            .mission-section {
+                padding: 2.5rem 4%;
+            }
+
+            .mission-section blockquote {
+                font-size: 1.1rem;
+            }
+
+            .about h2 {
+                font-size: 1.5rem;
+            }
+
+            .about p {
+                font-size: 0.98rem;
+            }
+
+            .cta-banner h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-banner p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .whatsapp-float {
+                bottom: 16px;
+                right: 16px;
+                width: 52px;
+                height: 52px;
+                font-size: 25px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .trust-bar {
+                grid-template-columns: 1fr; /* 1 coluna para telas extremamente pequenas */
             }
         }
     </style>
@@ -634,9 +769,9 @@
     <section class="mission-section">
         <div class="mission-container">
             <h2>Nossa Missão</h2>
-            <caption>
+            <blockquote>
                 “Ir além da simples execução de serviços. Atuamos entendendo a fundo o processo do cliente, identificando riscos ocultos e propondo engenharia preventiva para garantir segurança, máxima disponibilidade e estabilidade operacional.”
-            </caption>
+            </blockquote>
         </div>
     </section>
 
@@ -696,7 +831,7 @@
         <div class="solutions-grid">
             <div class="solution-card">
                 <h3>🔍 Diagnóstico Técnico</h3>
-                <p>Identificação precisa de causas raizes de falhas elétricas em painéis, motores e sistemas para evitar quebras repetitivas.</p>
+                <p>Identificação precisa de causas raízes de falhas elétricas em painéis, motores e sistemas para evitar quebras repetitivas.</p>
             </div>
             <div class="solution-card">
                 <h3>📐 Projetos Elétricos</h3>
@@ -782,7 +917,7 @@
         <div class="about-container">
             <h2>Sobre a Empresa</h2>
             <p>Acreditamos que a engenharia elétrica deve ir muito além da simples execução de reparos ou trocas de componentes. Nossa atuação começa entendendo profundamente o processo produtivo de cada cliente, identificando pontos de vulnerabilidade e propondo soluções técnicas que realmente aumentem a segurança e a confiabilidade da operação.</p>
-            <p>Unimos o rigor metodológico de um Engenheiro Eletricista com a vivência agil e prática de chão de fábrica e manutenção industrial. Essa combinação garante a você um atendimento completo: laudos precisos, responsabilidade técnica formal e soluções definitivas de quem sabe exatamente como as coisas funcionam na prática.</p>
+            <p>Unimos o rigor metodológico de um Engenheiro Eletricista com a vivência ágil e prática de chão de fábrica e manutenção industrial. Essa combinação garante a você um atendimento completo: laudos precisos, responsabilidade técnica formal e soluções definitivas de quem sabe exatamente como as coisas funcionam na prática.</p>
             
             <div class="highlight-box">
                 <strong>Nosso compromisso:</strong> Garantir que os ativos da sua operação funcionem com segurança máxima, alta performance e a menor taxa de paradas não planejadas possível.
