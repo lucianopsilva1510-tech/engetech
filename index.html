@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engenharia Elétrica & Serviços Técnicos | Soluções Industriais e Residenciais</title>
-    <meta name="description" content="Soluções em engenharia elétrica, manutenção industrial, painéis de comando, motores de indução, emissão de ART, automação e instalações residenciais.">
+    <title>Engenharia Elétrica & Confiabilidade Operacional | Gestão de Ativos Industriais</title>
+    <meta name="description" content="Engenharia elétrica aplicada para reduzir paradas, aumentar a disponibilidade dos ativos e garantir segurança operacional em operações industriais e logísticas.">
     <style>
         :root {
             --primary: #0f172a;
@@ -98,7 +98,7 @@
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: var(--text-light);
-            padding: 4rem 5%;
+            padding: 5rem 5% 4.5rem;
             text-align: center;
         }
 
@@ -107,24 +107,29 @@
             background-color: rgba(217, 119, 6, 0.2);
             color: var(--accent);
             border: 1px solid var(--accent);
-            padding: 0.25rem 0.75rem;
+            padding: 0.35rem 0.9rem;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .hero p {
-            font-size: 1.1rem;
-            color: #94a3b8;
-            max-width: 750px;
-            margin: 0 auto 2rem auto;
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 780px;
+            margin: 0 auto 2.5rem auto;
+            font-weight: 400;
         }
 
         .hero-btns {
@@ -137,7 +142,7 @@
         .btn-primary {
             background-color: #22c55e;
             color: #ffffff;
-            padding: 0.8rem 1.75rem;
+            padding: 0.9rem 1.8rem;
             border-radius: var(--radius);
             text-decoration: none;
             font-weight: 700;
@@ -156,25 +161,26 @@
             background-color: transparent;
             color: var(--text-light);
             border: 1px solid #475569;
-            padding: 0.8rem 1.75rem;
+            padding: 0.9rem 1.8rem;
             border-radius: var(--radius);
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.2s;
+            transition: background 0.2s, border-color 0.2s;
         }
 
         .btn-secondary:hover {
-            background-color: rgba(255,255,255,0.05);
+            background-color: rgba(255,255,255,0.08);
+            border-color: #94a3b8;
         }
 
-        /* Trust Badges */
+        /* Trust Badges Bar */
         .trust-bar {
             background-color: #ffffff;
             border-bottom: 1px solid var(--border);
-            padding: 1.5rem 5%;
+            padding: 1.8rem 5%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
             text-align: center;
         }
 
@@ -187,6 +193,7 @@
         .trust-item strong {
             font-size: 1rem;
             color: var(--primary);
+            margin-bottom: 0.2rem;
         }
 
         .trust-item span {
@@ -194,100 +201,254 @@
             color: var(--text-muted);
         }
 
-        /* Services Section */
-        .services {
-            padding: 4rem 5%;
-        }
-
+        /* Common Section Titles */
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
         }
 
         .section-title h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--primary);
+            font-weight: 700;
         }
 
         .section-title p {
             color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-size: 1.05rem;
         }
 
-        .services-grid {
+        /* Problem Section */
+        .problem-section {
+            padding: 4.5rem 5%;
+            background-color: #ffffff;
+        }
+
+        .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .service-category {
+        .problem-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border);
+            border-left: 4px solid #ef4444;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .problem-card span {
+            font-size: 1.2rem;
+        }
+
+        .problem-card p {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            color: var(--text-light);
+            padding: 3.5rem 5%;
+            text-align: center;
+        }
+
+        .mission-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .mission-section h2 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .mission-section blockquote {
+            font-size: 1.35rem;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #f1f5f9;
+        }
+
+        /* Workflow / Methodology Section */
+        .workflow {
+            padding: 4.5rem 5%;
+            background-color: var(--bg-light);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.8rem 1.2rem;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            position: relative;
+        }
+
+        .step-number {
+            background-color: var(--accent);
+            color: var(--text-light);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem auto;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .step-card strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* Solutions Section */
+        .solutions {
+            padding: 4.5rem 5%;
+            background-color: #ffffff;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .solution-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
         }
 
-        .service-category h3 {
-            font-size: 1.4rem;
+        .solution-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+        }
+
+        .solution-card h3 {
+            font-size: 1.3rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
             gap: 10px;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0.5rem;
         }
 
-        .service-list {
-            list-style: none;
-            margin-bottom: 1.5rem;
+        .solution-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
-        .service-list li {
-            padding: 0.6rem 0;
-            border-bottom: 1px dashed var(--border);
+        /* Segments Section */
+        .segments {
+            padding: 4.5rem 5%;
+            background-color: var(--bg-light);
+        }
+
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .segment-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Differentials Section */
+        .differentials {
+            padding: 4.5rem 5%;
+            background-color: #ffffff;
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .diff-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 1.8rem;
+        }
+
+        .diff-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .diff-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
         }
 
-        .service-list li strong {
-            color: var(--text-dark);
-        }
-
-        .service-category .btn-cat {
-            display: block;
-            text-align: center;
-            background-color: var(--primary);
-            color: var(--text-light);
-            padding: 0.7rem;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .service-category .btn-cat:hover {
-            background-color: var(--primary-light);
-        }
-
         /* About Section */
         .about {
-            background-color: #ffffff;
-            padding: 4rem 5%;
+            background-color: var(--bg-light);
+            padding: 4.5rem 5%;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
 
         .about-container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
         .about h2 {
             font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .about p {
@@ -297,76 +458,46 @@
         }
 
         .highlight-box {
-            background-color: #f1f5f9;
+            background-color: #ffffff;
             border-left: 4px solid var(--accent);
-            padding: 1.2rem;
-            margin-top: 1.5rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
             border-radius: 0 var(--radius) var(--radius) 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
         }
 
         .highlight-box strong {
             color: var(--primary);
         }
 
-        /* Workflow */
-        .workflow {
-            padding: 4rem 5%;
-            text-align: center;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .step-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: var(--radius);
-        }
-
-        .step-number {
-            background-color: var(--accent);
-            color: var(--text-light);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem auto;
-            font-weight: 700;
-        }
-
         /* CTA Banner */
         .cta-banner {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: var(--text-light);
-            padding: 3.5rem 5%;
+            padding: 4.5rem 5%;
             text-align: center;
         }
 
         .cta-banner h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .cta-banner p {
-            color: #94a3b8;
-            margin-bottom: 2rem;
-            max-width: 600px;
+            color: #cbd5e1;
+            margin-bottom: 2.2rem;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
+            font-size: 1.15rem;
         }
 
         /* Footer */
         footer {
             background-color: #020617;
             color: #64748b;
-            padding: 2rem 5%;
+            padding: 2.5rem 5%;
             text-align: center;
             font-size: 0.9rem;
         }
@@ -375,7 +506,7 @@
             color: #f8fafc;
         }
 
-        /* Floating WhatsApp */
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -404,7 +535,13 @@
                 display: none;
             }
             .hero h1 {
-                font-size: 1.7rem;
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.05rem;
+            }
+            .section-title h2 {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -413,83 +550,229 @@
 
     <!-- Header -->
     <header>
-        <a href="#" class="logo">⚡ <span>ENGENHARIA</span> & ELÉTRICA</a>
+        <a href="#" class="logo">⚡ <span>ENGENHARIA</span> & CONFIABILIDADE</a>
         <nav>
             <ul>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#industrial">Industrial</a></li>
-                <li><a href="#residencial">Residencial</a></li>
+                <li><a href="#problema">Desafios</a></li>
+                <li><a href="#metodologia">Como Trabalhamos</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#segmentos">Segmentos</a></li>
                 <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
-        <a href="https://wa.me/+5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn-header" target="_blank">Falar no WhatsApp</a>
+        <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20minha%20opera%C3%A7%C3%A3o." class="btn-header" target="_blank">Agendar Diagnóstico</a>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <span class="hero-badge">⚡ Engenharia Elétrica & Manutenção Especializada</span>
-        <h1>Soluções elétricas com a agilidade do chão de fábrica e a segurança da Engenharia.</h1>
-        <p>Do diagnóstico preciso em painéis e motores industriais a projetos residenciais e automação. Atendimento técnico especializado com emissão de ART e conformidade com as normas NRs.</p>
+        <span class="hero-badge">⚡ Confiabilidade Operacional & Engenharia Aplicada</span>
+        <h1>Confiabilidade para sua operação.</h1>
+        <p>Engenharia elétrica aplicada para reduzir paradas, aumentar a disponibilidade dos ativos e garantir segurança operacional.</p>
         <div class="hero-btns">
-            <a href="https://wa.me/19984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn-primary" target="_blank">
-                📱 Falar com o Engenheiro
+            <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20minha%20opera%C3%A7%C3%A3o." class="btn-primary" target="_blank">
+                📱 Solicitar Diagnóstico Técnico
             </a>
-            <a href="#servicos" class="btn-secondary">Conheça Nossos Serviços</a>
+            <a href="#metodologia" class="btn-secondary">Conheça Nossa Metodologia</a>
         </div>
     </section>
 
     <!-- Trust Bar -->
     <section class="trust-bar">
         <div class="trust-item">
-            <strong>🛡️ Responsável Técnico</strong>
-            <span>Engenheiro Eletricista Habilitado</span>
+            <strong>🛡️ Responsabilidade Técnica</strong>
+            <span>Engenharia Habilitada (ART)</span>
         </div>
         <div class="trust-item">
-            <strong>⚙️ Experiência Prática</strong>
-            <span>Vivência em Manutenção Industrial</span>
+            <strong>⚙️ Foco em Downtime Zero</strong>
+            <span>Redução de Paradas Não Planejadas</span>
         </div>
         <div class="trust-item">
-            <strong>📄 Emissão de ART</strong>
-            <span>Laudos e Adequações Oficiais</span>
+            <strong>📊 Experiência Prática</strong>
+            <span>Vivência Real em Chão de Fábrica</span>
         </div>
         <div class="trust-item">
-            <strong>👷 Seguranças NRs</strong>
+            <strong>👷 Segurança & NRs</strong>
             <span>Conformidade com NR-10 e NR-35</span>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="servicos">
+    <!-- Problem Section -->
+    <section class="problem-section" id="problema">
         <div class="section-title">
-            <h2>Nossas Soluções Técnicas</h2>
-            <p>Atendimento especializado para indústrias, comércios e residências.</p>
+            <h2>Sua empresa enfrenta algum destes desafios?</h2>
+            <p>Identificamos e eliminamos gargalos elétricos que comprometem a sua produtividade.</p>
+        </div>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <span>☒</span>
+                <p>Paradas inesperadas na linha de produção</p>
+            </div>
+            <div class="problem-card">
+                <span>☒</span>
+                <p>Falhas recorrentes em painéis e motores</p>
+            </div>
+            <div class="problem-card">
+                <span>☒</span>
+                <p>Equipamentos críticos sem gestão preventiva</p>
+            </div>
+            <div class="problem-card">
+                <span>☒</span>
+                <p>Falta de suporte técnico de engenharia dedicada</p>
+            </div>
+            <div class="problem-card">
+                <span>☒</span>
+                <p>Necessidade de emissão de laudos e ART</p>
+            </div>
+            <div class="problem-card">
+                <span>☒</span>
+                <p>Baixa confiabilidade nos ativos elétricos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="mission-container">
+            <h2>Nossa Missão</h2>
+            <caption>
+                “Ir além da simples execução de serviços. Atuamos entendendo a fundo o processo do cliente, identificando riscos ocultos e propondo engenharia preventiva para garantir segurança, máxima disponibilidade e estabilidade operacional.”
+            </caption>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="workflow" id="metodologia">
+        <div class="section-title">
+            <h2>Como Trabalhamos</h2>
+            <p>Um método estruturado para entregar diagnóstico real e soluções definitivas.</p>
         </div>
 
-        <div class="services-grid">
-            <!-- Industrial -->
-            <div class="service-category" id="industrial">
-                <h3>🏭 Setor Industrial & Comercial</h3>
-                <ul class="service-list">
-                    <li><strong>Painéis de Comando:</strong> Análise, montagem e detecção avançada de falhas elétricas.</li>
-                    <li><strong>Motores Elétricos:</strong> Manutenção preventiva e diagnósticos em motores de indução trifásicos.</li>
-                    <li><strong>Equipamentos Especiais:</strong> Manutenção e calibração de estufas e painéis laboratoriais.</li>
-                    <li><strong>Engenharia e ART:</strong> Laudos de instalações, adequações e Anotação de Responsabilidade Técnica.</li>
-                    <li><strong>Manutenção Preventiva:</strong> Planos focados na redução do tempo de parada de produção (downtime).</li>
-                </ul>
-                <a href="https://wa.me/+5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7o%20industrial." class="btn-cat" target="_blank">Solicitar Orçamento Industrial</a>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <strong>Entendimento</strong>
+                <p style="font-size:0.85rem; color: var(--text-muted);">Mapeamento inicial da necessidade operacional.</p>
             </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <strong>Diagnóstico Técnico</strong>
+                <p style="font-size:0.85rem; color: var(--text-muted);">Análise preliminar do cenário e dos ativos.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <strong>Levantamento</strong>
+                <p style="font-size:0.85rem; color: var(--text-muted);">Inspeção minuciosa diretamente em campo.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <strong>Engenharia</strong>
+                <p style="font-size:0.85rem; color: var(--text-muted);">Análise técnica, cálculos e definição do plano.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <strong>Proposta Técnica</strong>
+                <p style="font-size:0.85rem; color: var(--text-muted);">Apresentação transparente do escopo e metas.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <strong>Execução</strong>
+                <p style="font-size:0.85rem; color: var(--text-muted);">Intervenção técnica dentro de normas rigorosas.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">7</div>
+                <strong>Acompanhamento</strong>
+                <p style="font-size:0.85rem; color: var(--text-muted);">Garantia, monitoramento e continuidade.</p>
+            </div>
+        </div>
+    </section>
 
-            <!-- Residencial -->
-            <div class="service-category" id="residencial">
-                <h3>🏠 Setor Residencial & Automação</h3>
-                <ul class="service-list">
-                    <li><strong>Instalações e Reformas:</strong> Execução de projetos elétricos com padrão e segurança de engenharia.</li>
-                    <li><strong>Automação Residencial:</strong> Projetos de iluminação inteligente, controle de acesso e conforto.</li>
-                    <li><strong>Ar-Condicionado:</strong> Instalação técnica, higienização e manutenção preventiva.</li>
-                    <li><strong>Diagnóstico de Urgência:</strong> Solução rápida para curtos-circuitos, quedas de disjuntor e fuga de corrente.</li>
-                    <li><strong>Quadros de Distribuição:</strong> Mapeamento, dimensionamento correto e substituição de componentes.</li>
-                </ul>
-                <a href="https://wa.me/+5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7o%20residencial." class="btn-cat" target="_blank">Solicitar Orçamento Residencial</a>
+    <!-- Solutions Section -->
+    <section class="solutions" id="solucoes">
+        <div class="section-title">
+            <h2>Soluções Estratégicas</h2>
+            <p>Engenharia focada na preservação da sua capacidade produtiva.</p>
+        </div>
+
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <h3>🔍 Diagnóstico Técnico</h3>
+                <p>Identificação precisa de causas raizes de falhas elétricas em painéis, motores e sistemas para evitar quebras repetitivas.</p>
+            </div>
+            <div class="solution-card">
+                <h3>📐 Projetos Elétricos</h3>
+                <p>Dimensionamento e desenvolvimento de projetos elétricos focados na eficiência, segurança e fácil manutenção futura.</p>
+            </div>
+            <div class="solution-card">
+                <h3>🏭 Manutenção Industrial</h3>
+                <p>Intervenções preditivas, preventivas e corretivas estruturadas para estender a vida útil de equipamentos críticos.</p>
+            </div>
+            <div class="solution-card">
+                <h3>🤖 Automação Industrial</h3>
+                <p>Implementação e melhorias em sistemas automatizados para aumentar o controle, a repetibilidade e a produtividade.</p>
+            </div>
+            <div class="solution-card">
+                <h3>📄 Adequação e ART</h3>
+                <p>Emissão de Anotação de Responsabilidade Técnica (ART), laudos das instalações e adequação às normas vigentes.</p>
+            </div>
+            <div class="solution-card">
+                <h3>💡 Consultoria Especializada</h3>
+                <p>Análise de infraestrutura elétrica para identificação de desperdícios, riscos à segurança e pontos de melhoria técnica.</p>
+            </div>
+            <div class="solution-card">
+                <h3>🛠️ Contratos de Manutenção</h3>
+                <p>Planos contínuos de acompanhamento preventivo projetados para manter o seu indicador de downtime o mais próximo de zero.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Segments Section -->
+    <section class="segments" id="segmentos">
+        <div class="section-title">
+            <h2>Segmentos de Atuação</h2>
+            <p>Soluções desenhadas para empresas que dependem da disponibilidade contínua de seus ativos.</p>
+        </div>
+
+        <div class="segments-grid">
+            <div class="segment-card">🏭 Pequenas Indústrias</div>
+            <div class="segment-card">🏢 Médias Indústrias</div>
+            <div class="segment-card">📦 Centros Logísticos</div>
+            <div class="segment-card">🚛 Transportadoras</div>
+            <div class="segment-card">🏬 Centros de Distribuição</div>
+            <div class="segment-card">⚡ Empresas com Ativos Críticos</div>
+        </div>
+    </section>
+
+    <!-- Differentials Section -->
+    <section class="differentials">
+        <div class="section-title">
+            <h2>Por Que Somos Diferentes?</h2>
+            <p>O equilíbrio exato entre o rigor da engenharia e a agilidade do chão de fábrica.</p>
+        </div>
+
+        <div class="diff-grid">
+            <div class="diff-card">
+                <h3>Engenharia Aplicada</h3>
+                <p>Conhecimento teórico aliado diretamente à resolução prática de problemas do dia a dia industrial.</p>
+            </div>
+            <div class="diff-card">
+                <h3>Experiência Prática</h3>
+                <p>Vivência real em chão de fábrica, entendendo a urgência e o impacto financeiro de uma linha parada.</p>
+            </div>
+            <div class="diff-card">
+                <h3>Responsabilidade Técnica</h3>
+                <p>Atuação com respaldo formal, conformidade com as NRs e emissão de ARTs registradas no Crea.</p>
+            </div>
+            <div class="diff-card">
+                <h3>Diagnósticos Precisos</h3>
+                <p>Foco na causa raiz do problema para evitar "reparos paliativos" e trocas desnecessárias de peças.</p>
+            </div>
+            <div class="diff-card">
+                <h3>Planejamento & Prevenção</h3>
+                <p>Estruturação de intervenções em horários estratégicos sem impactar sua meta de produção.</p>
+            </div>
+            <div class="diff-card">
+                <h3>Foco em Confiabilidade</h3>
+                <p>Trabalhamos para garantir que sua operação alcance alta disponibilidade de equipamentos com segurança total.</p>
             </div>
         </div>
     </section>
@@ -497,68 +780,36 @@
     <!-- About Section -->
     <section class="about" id="sobre">
         <div class="about-container">
-            <h2>Engenharia Aplicada à Prática</h2>
-            <p>Diferente de consultorias puramente teóricas ou de execuções sem amparo técnico, nossa atuação une a experiência de chão de fábrica à responsabilidade técnica de um Engenheiro Eletricista.</p>
-            <p>Com bagagem prática como técnico eletricista e atuação direta na manutenção industrial, possuímos know-how em motores de indução trifásicos, diagnósticos em painéis de comando complexos e equipamentos laboratoriais de alta precisão.</p>
+            <h2>Sobre a Empresa</h2>
+            <p>Acreditamos que a engenharia elétrica deve ir muito além da simples execução de reparos ou trocas de componentes. Nossa atuação começa entendendo profundamente o processo produtivo de cada cliente, identificando pontos de vulnerabilidade e propondo soluções técnicas que realmente aumentem a segurança e a confiabilidade da operação.</p>
+            <p>Unimos o rigor metodológico de um Engenheiro Eletricista com a vivência agil e prática de chão de fábrica e manutenção industrial. Essa combinação garante a você um atendimento completo: laudos precisos, responsabilidade técnica formal e soluções definitivas de quem sabe exatamente como as coisas funcionam na prática.</p>
             
             <div class="highlight-box">
-                <strong>Garantia de Segurança e Qualidade:</strong> Cada serviço executado — seja uma grande intervenção industrial ou uma reforma residencial — segue rigorosamente as normas de segurança vigentes (ABNT / NRs) com total respaldo técnico.
-            </div>
-        </div>
-    </section>
-
-    <!-- Workflow -->
-    <section class="workflow">
-        <div class="section-title">
-            <h2>Como Funciona o Atendimento</h2>
-            <p>Processo simples, transparente e focado na solução.</p>
-        </div>
-
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <strong>Contato Inicial</strong>
-                <p>Envie sua necessidade pelo WhatsApp ou formulário.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <strong>Diagnóstico / Visita</strong>
-                <p>Avaliamos tecnicamente a demanda ou agendamos visita local.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <strong>Proposta Comercial</strong>
-                <p>Apresentamos o orçamento claro com escopo e prazos.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">4</div>
-                <strong>Execução & Garantia</strong>
-                <p>Serviço concluído nas normas, com emissão de ART e garantia.</p>
+                <strong>Nosso compromisso:</strong> Garantir que os ativos da sua operação funcionem com segurança máxima, alta performance e a menor taxa de paradas não planejadas possível.
             </div>
         </div>
     </section>
 
     <!-- CTA Banner -->
     <section class="cta-banner">
-        <h2>Precisa de um diagnóstico preciso ou orçamento técnico?</h2>
-        <p>Evite riscos com instalações inadequadas ou paradas não planejadas na sua produção. Fale diretamente com o profissional responsável.</p>
-        <a href="https://wa.me/+5519984043591?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20t%C3%A9cnico." class="btn-primary" target="_blank">
-            💬 Iniciar Conversa no WhatsApp
+        <h2>Vamos entender o desafio da sua operação.</h2>
+        <p>Agende um diagnóstico técnico e descubra como podemos aumentar a confiabilidade dos seus equipamentos.</p>
+        <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20a%20minha%20empresa." class="btn-primary" target="_blank">
+            💬 Agendar Diagnóstico Técnico
         </a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p><strong>Engenharia Elétrica & Serviços Técnicos</strong></p>
-        <p>Projetos, Manutenção Industrial, Automação Residencial e Emissão de ART.</p>
+        <p><strong>Engenharia Elétrica & Confiabilidade Operacional</strong></p>
+        <p>Diagnósticos Técnicos, Manutenção Industrial, Projetos, Emissão de ART e Contratos de Confiabilidade.</p>
         <p style="margin-top: 1rem; font-size: 0.8rem; color: #475569;">© 2026 Todos os direitos reservados.</p>
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/+5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
+    <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20t%C3%A9cnico." class="whatsapp-float" target="_blank" title="Agendar Diagnóstico Técnico">
         💬
     </a>
 
 </body>
 </html>
-
