@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engenharia Elétrica & Confiabilidade Operacional | Gestão de Ativos Industriais</title>
+    <title>Engetech | Engenharia Elétrica & Confiabilidade Operacional</title>
     <meta name="description" content="Engenharia elétrica aplicada para reduzir paradas, aumentar a disponibilidade dos ativos e garantir segurança operacional em operações industriais e logísticas.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary: #0f172a;
+            --primary: #0a192f;
             --primary-light: #1e293b;
             --accent: #d97706;
             --accent-hover: #b45309;
-            --secondary: #2563eb;
+            --accent-green: #10b981;
+            --accent-green-hover: #059669;
             --bg-light: #f8fafc;
+            --bg-alt: #f1f5f9;
             --card-bg: #ffffff;
             --text-dark: #0f172a;
             --text-muted: #475569;
             --text-light: #f8fafc;
             --border: #e2e8f0;
-            --radius: 8px;
+            --radius: 6px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
         }
 
         * {
@@ -27,38 +37,49 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
-            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         /* Header */
         header {
             background-color: var(--primary);
-            color: var(--text-light);
-            padding: 1rem 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
+            height: 80px;
         }
 
         .logo {
             font-size: 1.25rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--text-light);
             text-decoration: none;
+            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .logo span {
@@ -68,30 +89,30 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         nav a {
-            color: var(--text-light);
+            color: #94a3b8;
             text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: var(--text-light);
         }
 
         .btn-header {
             background-color: var(--accent);
             color: var(--text-light);
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: var(--radius);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-            text-align: center;
+            font-size: 0.85rem;
+            transition: background 0.2s;
         }
 
         .btn-header:hover {
@@ -100,148 +121,197 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #020617 100%);
             color: var(--text-light);
-            padding: 5rem 5% 4.5rem;
-            text-align: center;
+            padding: 100px 0 90px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
         }
 
         .hero-badge {
-            display: inline-block;
-            background-color: rgba(217, 119, 6, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(217, 119, 6, 0.15);
             color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 0.35rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            max-width: 100%;
+            letter-spacing: 1px;
         }
 
         .hero h1 {
             font-size: 2.8rem;
-            margin-bottom: 1.2rem;
             line-height: 1.15;
             font-weight: 800;
+            margin-bottom: 1.2rem;
             letter-spacing: -0.5px;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: #cbd5e1;
-            max-width: 780px;
-            margin: 0 auto 2.5rem auto;
+            font-size: 1.15rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            max-width: 600px;
             font-weight: 400;
         }
 
         .hero-btns {
             display: flex;
             gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn-primary {
-            background-color: #22c55e;
+            background-color: var(--accent-green);
             color: #ffffff;
             padding: 0.9rem 1.8rem;
             border-radius: var(--radius);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: transform 0.2s, background 0.2s;
-            text-align: center;
+            gap: 10px;
+            transition: background 0.2s, transform 0.2s;
+            font-size: 0.95rem;
         }
 
         .btn-primary:hover {
-            background-color: #16a34a;
+            background-color: var(--accent-green-hover);
             transform: translateY(-2px);
         }
 
         .btn-secondary {
             background-color: transparent;
             color: var(--text-light);
-            border: 1px solid #475569;
+            border: 1px solid #334155;
             padding: 0.9rem 1.8rem;
             border-radius: var(--radius);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             transition: background 0.2s, border-color 0.2s;
-            text-align: center;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 0.95rem;
         }
 
         .btn-secondary:hover {
-            background-color: rgba(255,255,255,0.08);
-            border-color: #94a3b8;
+            background-color: rgba(255,255,255,0.05);
+            border-color: #64748b;
         }
 
-        /* Trust Badges Bar */
+        .hero-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-card h3 {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+        }
+
+        .hero-card li {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Trust Bar */
         .trust-bar {
-            background-color: #ffffff;
+            background-color: var(--card-bg);
             border-bottom: 1px solid var(--border);
-            padding: 1.8rem 5%;
+            padding: 2rem 0;
+        }
+
+        .trust-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            text-align: center;
+            gap: 2rem;
         }
 
         .trust-item {
             display: flex;
-            flex-direction: column;
             align-items: center;
-        }
-
-        .trust-item strong {
-            font-size: 1rem;
-            color: var(--primary);
-            margin-bottom: 0.2rem;
+            gap: 12px;
         }
 
         .trust-item span {
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            font-size: 1.8rem;
         }
 
-        /* Common Section Titles */
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2rem;
+        .trust-item div strong {
+            display: block;
+            font-size: 0.95rem;
             color: var(--primary);
             font-weight: 700;
         }
 
+        .trust-item div p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Titles */
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.8rem;
+        }
+
         .section-title p {
             color: var(--text-muted);
-            margin-top: 0.5rem;
             font-size: 1.05rem;
         }
 
-        /* Problem Section */
+        /* Problems */
         .problem-section {
-            padding: 4.5rem 5%;
-            background-color: #ffffff;
+            background-color: var(--card-bg);
         }
 
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.25rem;
-            max-width: 1100px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
         }
 
         .problem-card {
@@ -249,28 +319,28 @@
             border: 1px solid var(--border);
             border-left: 4px solid #ef4444;
             border-radius: var(--radius);
-            padding: 1.25rem;
+            padding: 1.5rem;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 15px;
         }
 
         .problem-card span {
+            color: #ef4444;
+            font-weight: bold;
             font-size: 1.2rem;
-            flex-shrink: 0;
         }
 
         .problem-card p {
-            color: var(--primary);
+            color: var(--text-dark);
             font-weight: 600;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
         }
 
         /* Mission Section */
         .mission-section {
             background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
             color: var(--text-light);
-            padding: 3.5rem 5%;
             text-align: center;
         }
 
@@ -281,148 +351,143 @@
 
         .mission-section h2 {
             color: var(--accent);
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
         }
 
         .mission-section blockquote {
-            font-size: 1.35rem;
+            font-size: 1.5rem;
             font-weight: 500;
             line-height: 1.5;
             color: #f1f5f9;
         }
 
-        /* Workflow / Methodology Section */
-        .workflow {
-            padding: 4.5rem 5%;
-            background-color: var(--bg-light);
+        /* Workflow */
+        .workflow-section {
+            background-color: var(--bg-alt);
         }
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.25rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
         }
 
         .step-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 1.5rem 1rem;
+            padding: 2rem 1.5rem;
             border-radius: var(--radius);
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            box-shadow: var(--shadow-sm);
             position: relative;
         }
 
         .step-number {
-            background-color: var(--accent);
-            color: var(--text-light);
-            width: 38px;
-            height: 38px;
+            background-color: var(--primary);
+            color: var(--accent);
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem auto;
             font-weight: 700;
             font-size: 1.1rem;
+            margin-bottom: 1.2rem;
         }
 
         .step-card strong {
             display: block;
             color: var(--primary);
-            font-size: 1.05rem;
-            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
-        /* Solutions Section */
-        .solutions {
-            padding: 4.5rem 5%;
-            background-color: #ffffff;
+        .step-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        /* Solutions */
+        .solutions-section {
+            background-color: var(--card-bg);
         }
 
         .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .solution-card {
-            background-color: var(--card-bg);
+            background-color: var(--bg-light);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 1.75rem;
+            padding: 2rem;
             transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
         }
 
         .solution-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: #cbd5e1;
+        }
+
+        .solution-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: inline-block;
         }
 
         .solution-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--primary);
             margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-weight: 700;
         }
 
         .solution-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
+            font-size: 0.92rem;
+            line-height: 1.6;
         }
 
-        /* Segments Section */
-        .segments {
-            padding: 4.5rem 5%;
-            background-color: var(--bg-light);
+        /* Segments */
+        .segments-section {
+            background-color: var(--bg-alt);
         }
 
         .segments-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.25rem;
-            max-width: 1100px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
         }
 
         .segment-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 1.25rem 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
             font-weight: 600;
+            font-size: 0.95rem;
             color: var(--primary);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            box-shadow: var(--shadow-sm);
         }
 
-        /* Differentials Section */
-        .differentials {
-            padding: 4.5rem 5%;
-            background-color: #ffffff;
+        /* Differentials */
+        .differentials-section {
+            background-color: var(--card-bg);
         }
 
         .diff-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
-            max-width: 1100px;
-            margin: 0 auto;
         }
 
         .diff-card {
@@ -430,519 +495,429 @@
             border: 1px solid var(--border);
             border-top: 4px solid var(--accent);
             border-radius: var(--radius);
-            padding: 1.5rem;
+            padding: 1.8rem;
         }
 
         .diff-card h3 {
             font-size: 1.15rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
+            font-weight: 700;
         }
 
         .diff-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
 
-        /* About Section */
-        .about {
-            background-color: var(--bg-light);
-            padding: 4.5rem 5%;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+        /* About */
+        .about-section {
+            background-color: var(--bg-alt);
         }
 
-        .about-container {
-            max-width: 850px;
-            margin: 0 auto;
+        .about-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 3rem;
+            box-shadow: var(--shadow-sm);
         }
 
-        .about h2 {
-            font-size: 1.8rem;
+        .about-card h2 {
+            font-size: 2rem;
             color: var(--primary);
             margin-bottom: 1.2rem;
+            font-weight: 800;
         }
 
-        .about p {
+        .about-card p {
             color: var(--text-muted);
             margin-bottom: 1.2rem;
             font-size: 1.05rem;
         }
 
         .highlight-box {
-            background-color: #ffffff;
+            background-color: #fef3c7;
             border-left: 4px solid var(--accent);
             padding: 1.25rem;
             margin-top: 2rem;
             border-radius: 0 var(--radius) var(--radius) 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            color: #92400e;
+            font-weight: 500;
         }
 
-        .highlight-box strong {
-            color: var(--primary);
-        }
-
-        /* CTA Banner */
+        /* CTA */
         .cta-banner {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #020617 100%);
             color: var(--text-light);
-            padding: 4.5rem 5%;
             text-align: center;
         }
 
         .cta-banner h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .cta-banner p {
-            color: #cbd5e1;
+            color: #94a3b8;
             margin-bottom: 2.2rem;
             max-width: 650px;
             margin-left: auto;
             margin-right: auto;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
         }
 
         /* Footer */
         footer {
             background-color: #020617;
             color: #64748b;
-            padding: 2.5rem 5%;
-            text-align: center;
+            padding: 3rem 0 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
             font-size: 0.9rem;
+            text-align: center;
         }
 
         footer strong {
             color: #f8fafc;
         }
 
-        /* Floating WhatsApp Button */
+        /* Floating WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #22c55e;
+            bottom: 24px;
+            right: 24px;
+            background-color: var(--accent-green);
             color: white;
-            width: 58px;
-            height: 58px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+            box-shadow: var(--shadow-lg);
             text-decoration: none;
             z-index: 2000;
-            font-size: 28px;
-            transition: transform 0.3s;
+            font-size: 30px;
+            transition: transform 0.2s;
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
-        /* OTIMIZAÇÕES MOBILE DEDICADAS (RESPONSIVIDADE) */
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
-            header {
-                padding: 0.85rem 4%;
-                justify-content: space-between;
-            }
-
-            .logo {
-                font-size: 1.05rem;
-            }
-
             nav ul {
-                display: none; /* Oculta menu extenso para economizar espaço no celular */
-            }
-
-            .btn-header {
-                padding: 0.45rem 0.8rem;
-                font-size: 0.82rem;
-            }
-
-            .hero {
-                padding: 3rem 4% 2.5rem;
-            }
-
-            .hero-badge {
-                font-size: 0.72rem;
-                padding: 0.3rem 0.65rem;
-                white-space: normal;
-                word-break: break-word;
+                display: none;
             }
 
             .hero h1 {
-                font-size: 1.85rem;
-                margin-bottom: 1rem;
+                font-size: 2.1rem;
             }
 
             .hero p {
                 font-size: 1rem;
-                margin-bottom: 1.8rem;
             }
 
             .hero-btns {
                 flex-direction: column;
-                width: 100%;
-                gap: 0.75rem;
             }
 
             .btn-primary, .btn-secondary {
                 width: 100%;
-                padding: 0.85rem 1rem;
-                font-size: 0.95rem;
+                justify-content: center;
             }
 
-            .trust-bar {
-                grid-template-columns: 1fr 1fr; /* 2 colunas organizadas no celular */
-                gap: 1.25rem 0.75rem;
-                padding: 1.5rem 4%;
+            .section-padding {
+                padding: 60px 0;
             }
 
-            .trust-item strong {
-                font-size: 0.9rem;
-            }
-
-            .trust-item span {
-                font-size: 0.78rem;
-            }
-
-            .section-title {
-                margin-bottom: 2rem;
-            }
-
-            .section-title h2 {
-                font-size: 1.5rem;
-            }
-
-            .section-title p {
-                font-size: 0.95rem;
-            }
-
-            .problem-section, 
-            .workflow, 
-            .solutions, 
-            .segments, 
-            .differentials, 
-            .about, 
-            .cta-banner {
-                padding: 3rem 4%;
-            }
-
-            .problem-grid, 
-            .steps-grid, 
-            .solutions-grid, 
-            .segments-grid, 
-            .diff-grid {
-                grid-template-columns: 1fr; /* Coluna única fluida no celular */
-                gap: 1rem;
-            }
-
-            .mission-section {
-                padding: 2.5rem 4%;
-            }
-
-            .mission-section blockquote {
-                font-size: 1.1rem;
-            }
-
-            .about h2 {
-                font-size: 1.5rem;
-            }
-
-            .about p {
-                font-size: 0.98rem;
-            }
-
-            .cta-banner h2 {
-                font-size: 1.5rem;
-            }
-
-            .cta-banner p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .whatsapp-float {
-                bottom: 16px;
-                right: 16px;
-                width: 52px;
-                height: 52px;
-                font-size: 25px;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .trust-bar {
-                grid-template-columns: 1fr; /* 1 coluna para telas extremamente pequenas */
+            .about-card {
+                padding: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
-        <a href="#" class="logo">⚡ <span>ENGENHARIA</span> & CONFIABILIDADE</a>
-        <nav>
-            <ul>
-                <li><a href="#problema">Desafios</a></li>
-                <li><a href="#metodologia">Como Trabalhamos</a></li>
-                <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="#segmentos">Segmentos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-            </ul>
-        </nav>
-        <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20minha%20opera%C3%A7%C3%A3o." class="btn-header" target="_blank">Agendar Diagnóstico</a>
+        <div class="container header-container">
+            <a href="#" class="logo">⚡ ENGETECH <span>ENGENHARIA</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#desafios">Desafios</a></li>
+                    <li><a href="#metodologia">Metodologia</a></li>
+                    <li><a href="#solucoes">Soluções</a></li>
+                    <li><a href="#segmentos">Segmentos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20minha%20opera%C3%A7%C3%A3o." class="btn-header" target="_blank">Agendar Diagnóstico</a>
+        </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <span class="hero-badge">⚡ Confiabilidade Operacional & Engenharia Aplicada</span>
-        <h1>Confiabilidade para sua operação.</h1>
-        <p>Engenharia elétrica aplicada para reduzir paradas, aumentar a disponibilidade dos ativos e garantir segurança operacional.</p>
-        <div class="hero-btns">
-            <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20minha%20opera%C3%A7%C3%A3o." class="btn-primary" target="_blank">
-                📱 Solicitar Diagnóstico Técnico
-            </a>
-            <a href="#metodologia" class="btn-secondary">Conheça Nossa Metodologia</a>
+        <div class="container hero-grid">
+            <div>
+                <span class="hero-badge">⚡ Confiabilidade Operacional & Engenharia</span>
+                <h1>Engenharia Elétrica para operações que não podem parar.</h1>
+                <p>Soluções em diagnóstico, gestão de ativos e manutenção preditiva para garantir máxima disponibilidade industrial.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20minha%20opera%C3%A7%C3%A3o." class="btn-primary" target="_blank">
+                        📱 Solicitar Diagnóstico Técnico
+                    </a>
+                    <a href="#metodologia" class="btn-secondary">Conheça Nossa Metodologia</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <h3>🛡️ Garantia de Performance</h3>
+                <ul>
+                    <li>✔ Engenheiro Responsável Técnico Habilitado (ART)</li>
+                    <li>✔ Atendimento focado em Redução de Downtime</li>
+                    <li>✔ Diagnósticos Técnicos com Laudo Oficial</li>
+                    <li>✔ Conformidade total com NR-10 e NR-35</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- Trust Bar -->
     <section class="trust-bar">
-        <div class="trust-item">
-            <strong>🛡️ Responsabilidade Técnica</strong>
-            <span>Engenharia Habilitada (ART)</span>
-        </div>
-        <div class="trust-item">
-            <strong>⚙️ Foco em Downtime Zero</strong>
-            <span>Redução de Paradas Não Planejadas</span>
-        </div>
-        <div class="trust-item">
-            <strong>📊 Experiência Prática</strong>
-            <span>Vivência Real em Chão de Fábrica</span>
-        </div>
-        <div class="trust-item">
-            <strong>👷 Segurança & NRs</strong>
-            <span>Conformidade com NR-10 e NR-35</span>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="problem-section" id="problema">
-        <div class="section-title">
-            <h2>Sua empresa enfrenta algum destes desafios?</h2>
-            <p>Identificamos e eliminamos gargalos elétricos que comprometem a sua produtividade.</p>
-        </div>
-        <div class="problem-grid">
-            <div class="problem-card">
-                <span>☒</span>
-                <p>Paradas inesperadas na linha de produção</p>
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <span>📋</span>
+                <div>
+                    <strong>Responsabilidade Técnica</strong>
+                    <p>Engenharia Habilitada CREA / ART</p>
+                </div>
             </div>
-            <div class="problem-card">
-                <span>☒</span>
-                <p>Falhas recorrentes em painéis e motores</p>
+            <div class="trust-item">
+                <span>⚙️</span>
+                <div>
+                    <strong>Foco em Downtime Zero</strong>
+                    <p>Redução de Paradas Inesperadas</p>
+                </div>
             </div>
-            <div class="problem-card">
-                <span>☒</span>
-                <p>Equipamentos críticos sem gestão preventiva</p>
+            <div class="trust-item">
+                <span>🏭</span>
+                <div>
+                    <strong>Experiência Prática</strong>
+                    <p>Vivência Real em Chão de Fábrica</p>
+                </div>
             </div>
-            <div class="problem-card">
-                <span>☒</span>
-                <p>Falta de suporte técnico de engenharia dedicada</p>
-            </div>
-            <div class="problem-card">
-                <span>☒</span>
-                <p>Necessidade de emissão de laudos e ART</p>
-            </div>
-            <div class="problem-card">
-                <span>☒</span>
-                <p>Baixa confiabilidade nos ativos elétricos</p>
+            <div class="trust-item">
+                <span>🛡️</span>
+                <div>
+                    <strong>Segurança & Normas</strong>
+                    <p>Conformidade Rigorosa com NRs</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="mission-section">
-        <div class="mission-container">
-            <h2>Nossa Missão</h2>
+    <section class="section-padding problem-section" id="desafios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sua operação enfrenta algum desses gargalos?</h2>
+                <p>Identificamos e eliminamos falhas elétricas que geram prejuízos e interrupções na sua linha.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <span>✕</span>
+                    <p>Paradas não planejadas com custo elevado de máquina parada</p>
+                </div>
+                <div class="problem-card">
+                    <span>✕</span>
+                    <p>Falhas reincidentes em painéis e comandos elétricos</p>
+                </div>
+                <div class="problem-card">
+                    <span>✕</span>
+                    <p>Falta de plano preventivo para equipamentos críticos</p>
+                </div>
+                <div class="problem-card">
+                    <span>✕</span>
+                    <p>Ausência de acompanhamento por Engenheiro Eletricista dedicado</p>
+                </div>
+                <div class="problem-card">
+                    <span>✕</span>
+                    <p>Necessidade urgente de adequação técnica e emissão de ART</p>
+                </div>
+                <div class="problem-card">
+                    <span>✕</span>
+                    <p>Baixa confiabilidade na infraestrutura elétrica existente</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding mission-section">
+        <div class="container mission-container">
+            <h2>Nossa Filosofia</h2>
             <blockquote>
-                “Ir além da simples execução de serviços. Atuamos entendendo a fundo o processo do cliente, identificando riscos ocultos e propondo engenharia preventiva para garantir segurança, máxima disponibilidade e estabilidade operacional.”
+                “Ir além do reparo pontual. Entendemos o processo produtivo a fundo, mitigamos riscos ocultos e aplicamos engenharia para entregar estabilidade contínua.”
             </blockquote>
         </div>
     </section>
 
-    <!-- Methodology Section -->
-    <section class="workflow" id="metodologia">
-        <div class="section-title">
-            <h2>Como Trabalhamos</h2>
-            <p>Um método estruturado para entregar diagnóstico real e soluções definitivas.</p>
-        </div>
-
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <strong>Entendimento</strong>
-                <p style="font-size:0.85rem; color: var(--text-muted);">Mapeamento inicial da necessidade operacional.</p>
+    <section class="section-padding workflow-section" id="metodologia">
+        <div class="container">
+            <div class="section-title">
+                <h2>Como Trabalhamos</h2>
+                <p>Método padronizado para entregar solução definitiva e sem imprevistos.</p>
             </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <strong>Diagnóstico Técnico</strong>
-                <p style="font-size:0.85rem; color: var(--text-muted);">Análise preliminar do cenário e dos ativos.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <strong>Levantamento</strong>
-                <p style="font-size:0.85rem; color: var(--text-muted);">Inspeção minuciosa diretamente em campo.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">4</div>
-                <strong>Engenharia</strong>
-                <p style="font-size:0.85rem; color: var(--text-muted);">Análise técnica, cálculos e definição do plano.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">5</div>
-                <strong>Proposta Técnica</strong>
-                <p style="font-size:0.85rem; color: var(--text-muted);">Apresentação transparente do escopo e metas.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">6</div>
-                <strong>Execução</strong>
-                <p style="font-size:0.85rem; color: var(--text-muted);">Intervenção técnica dentro de normas rigorosas.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">7</div>
-                <strong>Acompanhamento</strong>
-                <p style="font-size:0.85rem; color: var(--text-muted);">Garantia, monitoramento e continuidade.</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <strong>Entendimento</strong>
+                    <p>Análise preliminar das necessidades e prioridades da operação.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <strong>Diagnóstico Técnico</strong>
+                    <p>Avaliação das instalações e histórico de ocorrências.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <strong>Levantamento</strong>
+                    <p>Inspeção minuciosa de campo diretamente nos ativos.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <strong>Engenharia</strong>
+                    <p>Cálculos, dimensionamentos e elaboração do plano de ação.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <strong>Execução & ART</strong>
+                    <p>Intervenção técnica padronizada com documentação formal.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Solutions Section -->
-    <section class="solutions" id="solucoes">
-        <div class="section-title">
-            <h2>Soluções Estratégicas</h2>
-            <p>Engenharia focada na preservação da sua capacidade produtiva.</p>
-        </div>
-
-        <div class="solutions-grid">
-            <div class="solution-card">
-                <h3>🔍 Diagnóstico Técnico</h3>
-                <p>Identificação precisa de causas raízes de falhas elétricas em painéis, motores e sistemas para evitar quebras repetitivas.</p>
+    <section class="section-padding solutions-section" id="solucoes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Soluções Estratégicas</h2>
+                <p>Serviços projetados para proteger e otimizar sua capacidade produtiva.</p>
             </div>
-            <div class="solution-card">
-                <h3>📐 Projetos Elétricos</h3>
-                <p>Dimensionamento e desenvolvimento de projetos elétricos focados na eficiência, segurança e fácil manutenção futura.</p>
-            </div>
-            <div class="solution-card">
-                <h3>🏭 Manutenção Industrial</h3>
-                <p>Intervenções preditivas, preventivas e corretivas estruturadas para estender a vida útil de equipamentos críticos.</p>
-            </div>
-            <div class="solution-card">
-                <h3>🤖 Automação Industrial</h3>
-                <p>Implementação e melhorias em sistemas automatizados para aumentar o controle, a repetibilidade e a produtividade.</p>
-            </div>
-            <div class="solution-card">
-                <h3>📄 Adequação e ART</h3>
-                <p>Emissão de Anotação de Responsabilidade Técnica (ART), laudos das instalações e adequação às normas vigentes.</p>
-            </div>
-            <div class="solution-card">
-                <h3>💡 Consultoria Especializada</h3>
-                <p>Análise de infraestrutura elétrica para identificação de desperdícios, riscos à segurança e pontos de melhoria técnica.</p>
-            </div>
-            <div class="solution-card">
-                <h3>🛠️ Contratos de Manutenção</h3>
-                <p>Planos contínuos de acompanhamento preventivo projetados para manter o seu indicador de downtime o mais próximo de zero.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Segments Section -->
-    <section class="segments" id="segmentos">
-        <div class="section-title">
-            <h2>Segmentos de Atuação</h2>
-            <p>Soluções desenhadas para empresas que dependem da disponibilidade contínua de seus ativos.</p>
-        </div>
-
-        <div class="segments-grid">
-            <div class="segment-card">🏭 Pequenas Indústrias</div>
-            <div class="segment-card">🏢 Médias Indústrias</div>
-            <div class="segment-card">📦 Centros Logísticos</div>
-            <div class="segment-card">🚛 Transportadoras</div>
-            <div class="segment-card">🏬 Centros de Distribuição</div>
-            <div class="segment-card">⚡ Empresas com Ativos Críticos</div>
-        </div>
-    </section>
-
-    <!-- Differentials Section -->
-    <section class="differentials">
-        <div class="section-title">
-            <h2>Por Que Somos Diferentes?</h2>
-            <p>O equilíbrio exato entre o rigor da engenharia e a agilidade do chão de fábrica.</p>
-        </div>
-
-        <div class="diff-grid">
-            <div class="diff-card">
-                <h3>Engenharia Aplicada</h3>
-                <p>Conhecimento teórico aliado diretamente à resolução prática de problemas do dia a dia industrial.</p>
-            </div>
-            <div class="diff-card">
-                <h3>Experiência Prática</h3>
-                <p>Vivência real em chão de fábrica, entendendo a urgência e o impacto financeiro de uma linha parada.</p>
-            </div>
-            <div class="diff-card">
-                <h3>Responsabilidade Técnica</h3>
-                <p>Atuação com respaldo formal, conformidade com as NRs e emissão de ARTs registradas no Crea.</p>
-            </div>
-            <div class="diff-card">
-                <h3>Diagnósticos Precisos</h3>
-                <p>Foco na causa raiz do problema para evitar "reparos paliativos" e trocas desnecessárias de peças.</p>
-            </div>
-            <div class="diff-card">
-                <h3>Planejamento & Prevenção</h3>
-                <p>Estruturação de intervenções em horários estratégicos sem impactar sua meta de produção.</p>
-            </div>
-            <div class="diff-card">
-                <h3>Foco em Confiabilidade</h3>
-                <p>Trabalhamos para garantir que sua operação alcance alta disponibilidade de equipamentos com segurança total.</p>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <span class="solution-icon">🔍</span>
+                    <h3>Diagnóstico de Causa Raiz</h3>
+                    <p>Análise avançada para encontrar a origem real de falhas recorrentes em motores, quadros e sistemas elétricos.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">📐</span>
+                    <h3>Projetos Elétricos</h3>
+                    <p>Dimensionamento e atualização de sistemas focados na segurança, expansibilidade e facilidade de manutenção.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">🏭</span>
+                    <h3>Manutenção Preventiva & Preditiva</h3>
+                    <p>Planos contínuos de inspeção estruturados para maximizar a vida útil dos equipamentos críticos.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">🤖</span>
+                    <h3>Automação & Painéis</h3>
+                    <p>Montagem, modernização (retrofitting) e otimização de painéis de comando e processos automatizados.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">📄</span>
+                    <h3>Laudos Técnicos e ART</h3>
+                    <p>Emissão de Anotação de Responsabilidade Técnica (ART), laudos para seguradoras e fiscalizações.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">🛠️</span>
+                    <h3>Contratos de Confiabilidade</h3>
+                    <p>Suporte de engenharia contínuo focado em manter seus indicadores de paralisação próximos a zero.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="sobre">
-        <div class="about-container">
-            <h2>Sobre a Empresa</h2>
-            <p>Acreditamos que a engenharia elétrica deve ir muito além da simples execução de reparos ou trocas de componentes. Nossa atuação começa entendendo profundamente o processo produtivo de cada cliente, identificando pontos de vulnerabilidade e propondo soluções técnicas que realmente aumentem a segurança e a confiabilidade da operação.</p>
-            <p>Unimos o rigor metodológico de um Engenheiro Eletricista com a vivência ágil e prática de chão de fábrica e manutenção industrial. Essa combinação garante a você um atendimento completo: laudos precisos, responsabilidade técnica formal e soluções definitivas de quem sabe exatamente como as coisas funcionam na prática.</p>
-            
-            <div class="highlight-box">
-                <strong>Nosso compromisso:</strong> Garantir que os ativos da sua operação funcionem com segurança máxima, alta performance e a menor taxa de paradas não planejadas possível.
+    <section class="section-padding segments-section" id="segmentos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Segmentos Atendidos</h2>
+                <p>Engenharia direcionada a operações com alta exigência de disponibilidade.</p>
+            </div>
+            <div class="segments-grid">
+                <div class="segment-card">🏭 Indústrias da Região</div>
+                <div class="segment-card">📦 Galpões & Logística</div>
+                <div class="segment-card">🏬 Centros de Distribuição</div>
+                <div class="segment-card">🚛 Transportadoras</div>
+                <div class="segment-card">⚡ Plantas com Ativos Críticos</div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Banner -->
-    <section class="cta-banner">
-        <h2>Vamos entender o desafio da sua operação.</h2>
-        <p>Agende um diagnóstico técnico e descubra como podemos aumentar a confiabilidade dos seus equipamentos.</p>
-        <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20a%20minha%20empresa." class="btn-primary" target="_blank">
-            💬 Agendar Diagnóstico Técnico
-        </a>
+    <section class="section-padding differentials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por que a Engetech?</h2>
+                <p>A união entre o rigor técnico da engenharia e a vivência de chão de fábrica.</p>
+            </div>
+            <div class="diff-grid">
+                <div class="diff-card">
+                    <h3>Abordagem Consultiva</h3>
+                    <p>Não vendemos apenas horas de trabalho, entregamos análise técnica com foco em mitigar prejuízos operacionais.</p>
+                </div>
+                <div class="diff-card">
+                    <h3>Engenheiro no Campo</h3>
+                    <p>Visita técnica e acompanhamento realizados por profissional capacitado e registrado no CREA.</p>
+                </div>
+                <div class="diff-card">
+                    <h3>Planejamento Sem Impacto</h3>
+                    <p>Programação de intervenções respeitando a janela de produção do cliente para evitar paradas desnecessárias.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Footer -->
+    <section class="section-padding about-section" id="sobre">
+        <div class="container">
+            <div class="about-card">
+                <h2>Sobre a Engetech</h2>
+                <p>Entendemos que no cenário industrial atual, a gestão de ativos elétricos é o coração da produtividade. Nossa proposta de valor foca em eliminar o modelo de "manutenção corretiva emergencial" e implementar uma cultura de confiabilidade técnica.</p>
+                <p>Combinamos o rigor metodológico de engenharia elétrica com a agilidade exigida pelo chão de fábrica. O resultado é uma operação mais segura, eficiente e previsível.</p>
+                <div class="highlight-box">
+                    <strong>Compromisso Engetech:</strong> Garantir a máxima disponibilidade da sua estrutura elétrica com total responsabilidade técnica e conformidade legal.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding cta-banner">
+        <div class="container">
+            <h2>Pronto para elevar a confiabilidade da sua operação?</h2>
+            <p>Agende uma avaliação com nosso engenheiro e receba um plano focado na eliminação de gargalos.</p>
+            <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20a%20minha%20empresa." class="btn-primary" target="_blank">
+                💬 Agendar Diagnóstico Técnico
+            </a>
+        </div>
+    </section>
+
     <footer>
-        <p><strong>Engenharia Elétrica & Confiabilidade Operacional</strong></p>
-        <p>Diagnósticos Técnicos, Manutenção Industrial, Projetos, Emissão de ART e Contratos de Confiabilidade.</p>
-        <p style="margin-top: 1rem; font-size: 0.8rem; color: #475569;">© 2026 Todos os direitos reservados.</p>
+        <div class="container">
+            <p><strong>Engetech Engenharia Elétrica & Confiabilidade Operacional</strong></p>
+            <p style="margin-top: 0.5rem;">Diagnósticos Técnicos | Manutenção Industrial | Projetos & ART</p>
+            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #475569;">© 2026 Engetech - Todos os direitos reservados.</p>
+        </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20t%C3%A9cnico." class="whatsapp-float" target="_blank" title="Agendar Diagnóstico Técnico">
+    <a href="https://wa.me/5519984043591?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20t%C3%A9cnico." class="whatsapp-float" target="_blank" title="Falar via WhatsApp">
         💬
     </a>
 
